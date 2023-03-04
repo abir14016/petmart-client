@@ -36,3 +36,32 @@
     transform: rotate(360deg);
   }
 }
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 0;
+  left: 0;
+  top: 0;
+  right: 0;
+  border: 0;
+  background-color: #0b1120;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='rgb(148 163 184 / 0.05)'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+  mask-image: linear-gradient(to bottom, transparent, black);
+  -webkit-mask-image: linear-gradient(to bottom, #0000, #000);
+}
+
+.section {
+  width: 905px;
+  background-color: #182234;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  position: relative;
+  box-shadow: 0 0 0 1px #ffffff2b;
+  overflow: hidden;
+  z-index: 2;
+}
