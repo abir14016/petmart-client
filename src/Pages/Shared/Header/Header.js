@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../../assets/logo/png-transparent-fox-head-animal-vector-illustration-caricature-person-red-orange-funny-removebg-preview.png';
+import logo from '../../../assets/logo/logo.png';
 
 const Header = () => {
     const menuItems = <>

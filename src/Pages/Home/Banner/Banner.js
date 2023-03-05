@@ -3,14 +3,17 @@ import bannerImage from '../../../assets/banner/hero_image_01.png'
 
 const Banner = () => {
     return (
-        <div className="hero min-h-screen">
-            <div className="hero-content flex-col lg:flex-row-reverse">
-                <img src={bannerImage} className="w-1/2" alt='mmm' />
+        <div className="md:grid grid-cols-5 gap-4 mt-10 md:mt-0 h-screen">
+            <div className="col-span-2 flex items-center justify-center">
                 <div>
-                    <h1 className="text-5xl font-bold text-primary">Box Office News!</h1>
-                    <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <h1 className='text-5xl font-extrabold text-[#ed6436]'>PetMart</h1>
+                    <h5>Biggest online pet market in Bangladesh</h5>
+                    <h5>Biggest online pet market in Bangladesh</h5>
+                    <h5>Biggest online pet market in Bangladesh</h5>
                 </div>
+            </div>
+            <div className="col-span-3 mt-5 md:mt-0">
+                <img src={bannerImage} alt="bannerImage" />
             </div>
         </div>
     );
