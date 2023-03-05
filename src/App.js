@@ -4,6 +4,7 @@ import Home from './Pages/Home/Home/Home';
 import Footer from './Pages/Shared/Footer/Footer';
 import Header from './Pages/Shared/Header/Header';
 import backgroundImage from "./assets/background/scattered-forcefields.svg";
+import Posts from './Pages/Posts/Posts';
 
 function App() {
   const background = {
@@ -19,6 +20,7 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/posts' element={<Posts />} />
       </Routes>
       {/* <Footer /> */}
     </div>

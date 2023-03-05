@@ -6,7 +6,7 @@ const Header = () => {
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/">Services</Link></li>
-        <li><Link to="/">Posts</Link></li>
+        <li><Link to="/posts">Posts</Link></li>
         <li className="dropdown dropdown-hover">
             <label tabIndex={0}>
                 Suppliments

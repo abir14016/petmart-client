@@ -3,7 +3,7 @@ import bannerImage from '../../../assets/banner/hero_image_01.png'
 
 const Banner = () => {
     return (
-        <div className="md:grid grid-cols-5 gap-4 mt-10 md:mt-0 h-screen">
+        <div className="md:grid grid-cols-5 gap-4 mt-10 md:mt-0">
             <div className="col-span-2 flex items-center justify-center">
                 <div>
                     <h1 className='text-5xl font-extrabold text-[#ed6436]'>PetMart</h1>

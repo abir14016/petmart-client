@@ -1,0 +1,44 @@
+[
+  {
+    "_id": "6359140be8007121dee3b6aa",
+    "icon": "fa-solid fa-cart-shopping",
+    "color": "rgb(185 28 28)",
+    "title": "Buy Pets",
+    "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!"
+  },
+  {
+    "_id": "6359140be8007121dee3b6ab",
+    "icon": "fa-solid fa-money-check-dollar",
+    "color": "rgb(29 78 216)",
+    "title": "Sell Pets",
+    "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!"
+  },
+  {
+    "_id": "6359140be8007121dee3b6ac",
+    "icon": "fa-solid fa-truck-fast",
+    "color": "rgb(126 34 206)",
+    "title": "Shipping Pets",
+    "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!"
+  },
+  {
+    "_id": "6359140be8007121dee3b6ad",
+    "icon": "fa-solid fa-stethoscope",
+    "color": "rgb(162 28 175)",
+    "title": "Pet Consultant",
+    "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!"
+  },
+  {
+    "_id": "6359140be8007121dee3b6ae",
+    "icon": "fa-solid fa-bone",
+    "color": "rgb(190 18 60)",
+    "title": "Pet Food",
+    "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!"
+  },
+  {
+    "_id": "6359140be8007121dee3b6af",
+    "icon": "fa-solid fa-basketball",
+    "color": "#4338ca",
+    "title": "Pet Toys",
+    "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!"
+  }
+]
