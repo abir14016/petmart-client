@@ -9,7 +9,7 @@ const Posts = () => {
             .then(data => setPosts(data));
     }, [])
     return (
-        <div className="md:grid grid-cols-3 gap-4 px-8 md:px-12 lg:px-16">
+        <div className="md:grid grid-cols-3 gap-4 px-2 md:px-8 lg:px-16">
             <div className="col-span-1 border">
                 <h2>Create Post</h2>
             </div>

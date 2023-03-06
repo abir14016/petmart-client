@@ -19,7 +19,7 @@ const Services = () => {
                 <div>
                     <h1 className='text-4xl'>Our <span className='text-primary'>Services</span></h1>
                     <h5>services we provide</h5>
-                    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-12 lg:px-16 mt-8 md:mt-10 lg:mt-12'>
+                    <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-8 md:px-16 lg:px-32 mt-8 md:mt-10 lg:mt-12'>
                         {
                             services.map(service => <Service
                                 service={service}

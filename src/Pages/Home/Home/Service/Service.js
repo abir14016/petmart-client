@@ -8,10 +8,10 @@ const Service = ({ service }) => {
     library.add(fas, faFontAwesome, faReact, faNode, faJsSquare, faStethoscope, faShoppingCart, faMoneyCheckDollar, faTruckFast, faBone, faBasketball);
     const { title, icon, details, color } = service;
     return (
-        <div className='border border-slate-800 p-8'>
+        <div className='border border-slate-800 p-8 bg-base-300'>
             <div className='transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300'>
                 <div>
-                    <FontAwesomeIcon style={{ color: `${color}` }} className='text-3xl' icon={icon}></FontAwesomeIcon>
+                    <FontAwesomeIcon style={{ color: `${color}` }} className='text-4xl' icon={icon}></FontAwesomeIcon>
                     <p className='text-xl font-bold'>{title}</p>
                 </div>
                 <div className='mt-3'>

@@ -5,6 +5,8 @@ import Home from './Pages/Home/Home/Home';
 import Header from './Pages/Shared/Header/Header';
 import backgroundImage from "./assets/background/scattered-forcefields.svg";
 import Posts from './Pages/Posts/Posts';
+import Login from './Pages/Authentication/Login/Login';
+import Regester from './Pages/Authentication/Regester/Regester';
 
 function App() {
   const background = {
@@ -20,6 +22,8 @@ function App() {
       <Header />
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/regester' element={<Regester />} />
         <Route path='/posts' element={<Posts />} />
       </Routes>
       {/* <Footer /> */}

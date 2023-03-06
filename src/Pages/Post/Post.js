@@ -42,7 +42,7 @@ const Post = ({ post }) => {
                             <p className='text-2xl font-bold text-pink-700'>{petPrice}</p>
                         </div>
                         <div>
-                            <button className='btn btn-secondary btn-sm'>Oredr Now</button>
+                            <button className='btn btn-secondary btn-xs md:btn-sm'>Oredr Now</button>
                         </div>
                     </div>
                     <p className='text-xs'>pet code: {postId}</p>
@@ -50,7 +50,7 @@ const Post = ({ post }) => {
                 <p className='text-slate-500'>{details}</p>
             </div>
             <div>
-                <img className='w-full h-[600px]' src={petImage} alt="petImage" />
+                <img className='w-full h-[300px] md:h-[400px] lg:h-[600px]' src={petImage} alt="petImage" />
             </div>
             <div className='flex justify-between px-4 md:px-6 lg:px-8 mt-2'>
                 <div className='flex justify-center items-center font-bold'>

@@ -47,7 +47,7 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end flex">
-                <button className='btn btn-primary'>Login</button>
+                <Link to="/login" className='btn btn-primary'>Login</Link>
                 <div className="dropdown dropdown-end ml-2">
                     <label tabIndex={0} className="btn btn-ghost btn-circle">
                         <div className="indicator">
