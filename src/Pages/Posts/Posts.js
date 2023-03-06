@@ -1,9 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import Post from '../Post/Post';
 
 const Posts = () => {
+    const [posts, setPosts] = useState([]);
+    useEffect(() => {
+        fetch("posts.json")
+            .then(res => res.json())
+            .then(data => setPosts(data));
+    }, [])
     return (
-        <div>
-            All posts
+        <div className="md:grid grid-cols-3 gap-4 px-8 md:px-12 lg:px-16">
+            <div className="col-span-1 border">
+                <h2>Create Post</h2>
+            </div>
+            <div className="col-span-2">
+                {
+                    posts.map(post => <Post
+                        key={post.id}
+                        post={post}
+                    ></Post>)
+                }
+            </div>
         </div>
     );
 };
