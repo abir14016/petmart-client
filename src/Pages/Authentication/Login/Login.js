@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import loginImage from "../../../assets/auth/login.webp";
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     // google authentication
@@ -18,6 +19,8 @@ const Login = () => {
         emailError,
     ] = useSignInWithEmailAndPassword(auth);
 
+    const [token] = useToken(emailUser || googleUser);
+
     // Login form
     const { register, formState: { errors }, handleSubmit } = useForm();
 
@@ -25,13 +28,14 @@ const Login = () => {
     const location = useLocation();
     let from = location.state?.from?.pathname || "/";
 
-    if (googleUser || emailUser) {
-        navigate(from, { replace: true });
-    }
+    useEffect(() => {
+        if (token) {
+            navigate(from, { replace: true });
+        }
+    }, [token, from, navigate]);
 
     // submit button
     const onSubmit = data => {
-        console.log(data);
         signInWithEmailAndPassword(data.email, data.password);
     }
     return (

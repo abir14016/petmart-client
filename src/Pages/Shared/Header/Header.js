@@ -84,7 +84,7 @@ const Header = () => {
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
                             <div className="w-10 rounded-full">
                                 {
-                                    user.photoURL ? <img src={user.photoURL} alt='currentUserImage' /> : <img src={demoUserImage} alt='demoUser'></img>
+                                    user?.photoURL ? <img src={user?.photoURL} alt='currentUserImage' /> : <img src={demoUserImage} alt='demoUser'></img>
                                 }
                             </div>
                         </label>
@@ -94,7 +94,7 @@ const Header = () => {
                             <div className="avatar flex justify-center items-center mt-2">
                                 <div className="w-20 rounded-full">
                                     {
-                                        user.photoURL ? <img src={user.photoURL} alt='userImage' /> : <img src={demoUserImage} alt='demoUser'></img>
+                                        user?.photoURL ? <img src={user?.photoURL} alt='userImage' /> : <img src={demoUserImage} alt='demoUser'></img>
                                     }
                                 </div>
                             </div>

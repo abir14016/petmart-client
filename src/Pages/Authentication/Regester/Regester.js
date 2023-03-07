@@ -6,6 +6,7 @@ import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useNavigate } from 'react-router-dom';
 import registerImage from "../../../assets/auth/regester-2.png";
+import useToken from '../../../hooks/useToken';
 
 const Regester = () => {
     // email authentication
@@ -19,8 +20,10 @@ const Regester = () => {
     //update name displayName and photoUrl
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
+    const [token] = useToken(emailUser);
+
     //navigate 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     // Login form
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -29,7 +32,6 @@ const Regester = () => {
 
     // submit button
     const onSubmit = async data => {
-        console.log('first', data);
         const image = data.image[0];
         const formData = new FormData();
         formData.append('image', image);
@@ -47,22 +49,18 @@ const Regester = () => {
                 }
             })
 
-        console.log("after image send to imgbb", data)
         await createUserWithEmailAndPassword(data.email, data.password);
-        console.log("after regestration", data)
 
         await updateProfile({ displayName: data.name, photoURL: data.photoURL });
-        console.log("after upgradation", data)
 
 
         setTimeout(() => {
             window.location.reload();
-            navigate('/');
-        }, 2000);
+        }, 1000);
     }
 
-    if (emailUser) {
-        console.log(emailUser);
+    if (token) {
+        navigate('/');
     }
     return (
         <div className='md:flex flex-row-reverse justify-evenly items-center px-2 md:px-8 lg:px-12 h-screen'>
