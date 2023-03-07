@@ -3,8 +3,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas, faThumbsUp, } from '@fortawesome/free-solid-svg-icons'
 import { faFontAwesome, faReact, faNode, faJsSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import auth from '../../firebase.init';
+import { Link } from 'react-router-dom';
 
 const Post = ({ post }) => {
+    const [user] = useAuthState(auth);
     library.add(fas, faFontAwesome, faReact, faNode, faJsSquare, faThumbsUp);
     const { postId, posterName, posterEmail, posterImage, petName, petImage, petPrice, postDate, postTime, details, comments, reacts } = post;
     return (
@@ -42,7 +46,12 @@ const Post = ({ post }) => {
                             <p className='text-2xl font-bold text-pink-700'>{petPrice}</p>
                         </div>
                         <div>
-                            <button className='btn btn-secondary btn-xs md:btn-sm'>Oredr Now</button>
+                            {
+                                !user ? <Link className='btn btn-secondary btn-xs md:btn-sm' to='/login'>Oredr Now</Link> : <button
+                                    className='btn btn-secondary btn-xs md:btn-sm'>
+                                    Oredr Now
+                                </button>
+                            }
                         </div>
                     </div>
                     <p className='text-xs'>pet code: {postId}</p>

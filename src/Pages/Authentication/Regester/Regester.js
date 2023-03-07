@@ -25,14 +25,38 @@ const Regester = () => {
     // Login form
     const { register, formState: { errors }, handleSubmit } = useForm();
 
+    const imageStorageKey = "8acfe57a0358d8f000330360b14c85d9";
+
     // submit button
     const onSubmit = async data => {
-        // console.log(data);
+        console.log('first', data);
+        const image = data.image[0];
+        const formData = new FormData();
+        formData.append('image', image);
+        const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
+
+        fetch(url, {
+            method: "POST",
+            body: formData
+        })
+            .then((res) => res.json())
+            .then((result) => {
+                if (result.success) {
+                    const img = result.data.url;
+                    data.photoURL = img;
+                }
+            })
+
+        console.log("after image send to imgbb", data)
         await createUserWithEmailAndPassword(data.email, data.password);
-        // console.log("registered");
-        await updateProfile({ displayName: data.name });
-        // console.log("update done");
+        console.log("after regestration", data)
+
+        await updateProfile({ displayName: data.name, photoURL: data.photoURL });
+        console.log("after upgradation", data)
+
+
         setTimeout(() => {
+            window.location.reload();
             navigate('/');
         }, 2000);
     }
@@ -64,9 +88,9 @@ const Regester = () => {
                                         }
                                     })}
                                 />
-                                {errors.name?.type === 'required' && <p className="text-error label-text-alt font-semibold">
-                                    {errors.name.message}
-                                </p>}
+                                <label className="label">
+                                    {errors.name?.type === 'required' && <span className="label-text-alt text-red-600">{errors.name.message}</span>}
+                                </label>
                             </div>
                             {/* name field */}
 
@@ -128,6 +152,31 @@ const Regester = () => {
                                 </label>
                             </div>
                             {/* password field */}
+
+                            {/* photo field */}
+                            <div className="form-control w-full max-w-xs">
+                                <label className="label">
+                                    <span className="label-text">Photo (svg, png, jpg, gif max-500kb)<span className='text-red-600'>*</span></span>
+                                </label>
+                                <input
+                                    type="file"
+                                    className="input input-bordered w-full max-w-xs text-sm file:cursor-pointer file:mr-3 file:mt-1 file:py-2 file:px-4
+                                    file:rounded-full file:border-0
+                                    file:text-sm file:font-semibold
+                                    file:bg-slate-600
+                                    hover:file:bg-slate-400"
+                                    {...register("image", {
+                                        required: {
+                                            value: true,
+                                            message: "image is required"
+                                        }
+                                    })}
+                                />
+                                <label className="label">
+                                    {errors.image?.type === 'required' && <span className="label-text-alt text-red-600">{errors.image.message}</span>}
+                                </label>
+                            </div>
+                            {/* photo field */}
 
                             {/* email errors and loading */}
                             {(emailError || updateError) && <p className='text-xs text-left text-red-500 mb-2'>{emailError?.message || updateError.message}</p>}
