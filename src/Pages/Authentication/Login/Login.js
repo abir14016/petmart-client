@@ -19,7 +19,7 @@ const Login = () => {
         emailError,
     ] = useSignInWithEmailAndPassword(auth);
 
-    const [token] = useToken(emailUser || googleUser);
+    // const [token] = useToken(emailUser || googleUser);
 
     // Login form
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -29,10 +29,30 @@ const Login = () => {
     let from = location.state?.from?.pathname || "/";
 
     useEffect(() => {
-        if (token) {
+        if (emailUser || googleUser) {
             navigate(from, { replace: true });
         }
-    }, [token, from, navigate]);
+    }, [emailUser, googleUser, from, navigate]);
+
+    const currentUser = {
+        email: emailUser?.user?.email || googleUser?.user?.email,
+        name: emailUser?.user?.displayName || googleUser?.user?.displayName,
+        photo: emailUser?.user?.photoURL || googleUser?.user?.photoURL,
+    }
+
+    if (emailUser || googleUser) {
+        fetch(`http://localhost:5000/user/${emailUser?.user?.email || googleUser?.user?.email}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(currentUser)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+            })
+    }
 
     // submit button
     const onSubmit = data => {

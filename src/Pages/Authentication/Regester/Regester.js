@@ -20,7 +20,7 @@ const Regester = () => {
     //update name displayName and photoUrl
     const [updateProfile, updating, updateError] = useUpdateProfile(auth);
 
-    const [token] = useToken(emailUser);
+    // const [token] = useToken(emailUser);
 
     //navigate 
     const navigate = useNavigate();
@@ -54,20 +54,48 @@ const Regester = () => {
         await updateProfile({ displayName: data.name, photoURL: data.photoURL });
 
 
-        setTimeout(() => {
-            window.location.reload();
-        }, 1000);
+        if (emailUser) {
+            fetch(`http://localhost:5000/user/${emailUser?.email}`, {
+                method: "PUT",
+                headers: {
+                    'content-type': 'application/json'
+                },
+                body: JSON.stringify(currentUser)
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data)
+                })
+        }
     }
 
-    if (token) {
-        navigate('/');
+    const currentUser = {
+        email: emailUser?.user?.email,
+        name: emailUser?.user?.displayName,
+        photo: emailUser?.user?.photoURL
+    }
+
+    if (emailUser) {
+        fetch(`http://localhost:5000/user/${emailUser?.user?.email}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(currentUser)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+            })
+
+        // navigate('/');
     }
     return (
         <div className='md:flex flex-row-reverse justify-evenly items-center px-2 md:px-8 lg:px-12 h-screen'>
             <div>
                 <div className="card w-96 bg-base-100 shadow-xl">
                     <div className="card-body">
-                        <h2 className="text-center text-3xl font-bold">Register</h2>
+                        <h2 className="text-center text-3xl font-bold">Registerr</h2>
                         <form onSubmit={handleSubmit(onSubmit)}>
 
                             {/* name field */}
