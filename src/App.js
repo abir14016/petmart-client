@@ -7,6 +7,7 @@ import backgroundImage from "./assets/background/scattered-forcefields.svg";
 import Posts from './Pages/Posts/Posts';
 import Login from './Pages/Authentication/Login/Login';
 import Regester from './Pages/Authentication/Regester/Regester';
+import RequireAuth from './Pages/Authentication/RequireAuth/RequireAuth';
 
 function App() {
   const background = {
@@ -24,7 +25,9 @@ function App() {
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
         <Route path='/regester' element={<Regester />} />
-        <Route path='/posts' element={<Posts />} />
+        <Route path='/posts' element={<RequireAuth>
+          <Posts />
+        </RequireAuth>} />
       </Routes>
       {/* <Footer /> */}
     </div>

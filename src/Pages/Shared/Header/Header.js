@@ -1,8 +1,17 @@
 import React from 'react';
+import { useAuthState, useSignOut } from 'react-firebase-hooks/auth';
 import { Link } from 'react-router-dom';
 import logo from '../../../assets/logo/logo.png';
+import auth from '../../../firebase.init';
 
 const Header = () => {
+    const [user, loading, error] = useAuthState(auth);
+    const [signOut, logoutLoading, logoutError] = useSignOut(auth);
+
+    //logout function
+    const logout = () => {
+        signOut(auth);
+    }
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/">Services</Link></li>
@@ -47,7 +56,9 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end flex">
-                <Link to="/login" className='btn btn-primary'>Login</Link>
+                {
+                    !user ? <Link to="/login" className='btn btn-primary'>Login</Link> : <button onClick={logout} className='btn btn-primary'>Logout</button>
+                }
                 <div className="dropdown dropdown-end ml-2">
                     <label tabIndex={0} className="btn btn-ghost btn-circle">
                         <div className="indicator">

@@ -4,6 +4,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading/Loading';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 const Login = () => {
     // google authentication
@@ -19,6 +20,14 @@ const Login = () => {
 
     // Login form
     const { register, formState: { errors }, handleSubmit } = useForm();
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+
+    if (googleUser || emailUser) {
+        navigate(from, { replace: true });
+    }
 
     // submit button
     const onSubmit = data => {
@@ -88,7 +97,7 @@ const Login = () => {
                             {/* password field */}
 
                             {/* email errors and loading */}
-                            {emailError && <p className='text-xs text-red-500 mb-2'>{emailError?.message}</p>}
+                            {emailError && <p className='text-xs text-left text-red-500 mb-2'>{emailError?.message}</p>}
                             {emailLoading && <Loading></Loading>}
                             {/* email errors and loading */}
 
@@ -99,10 +108,12 @@ const Login = () => {
                             />
                         </form>
 
+                        <p className='text-xs text-end'>new to petBazar? <Link className='link link-hover text-blue-500' to="/regester">create account</Link></p>
+
                         <div className="divider">or</div>
 
                         {/* social errors and loading */}
-                        {googleError && <p className='text-xs text-red-500 mb-2'>{googleError?.message}</p>}
+                        {googleError && <p className='text-xs text-left text-red-500 mb-2'>{googleError?.message}</p>}
                         {googleLoading && <Loading></Loading>}
                         {/* social errors and loading */}
 
