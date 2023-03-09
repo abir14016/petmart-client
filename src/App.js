@@ -11,7 +11,7 @@ import Regester from './Pages/Authentication/Regester/Regester';
 function App() {
   const background = {
     width: '100%',
-    height: '100vh',
+    height: '100%',
     backgroundImage: `url(${backgroundImage})`,
     backgroundSize: 'cover',
     backgroundPosition: 'center',

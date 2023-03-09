@@ -7,10 +7,11 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import { Link } from 'react-router-dom';
 
-const Post = ({ post }) => {
+const Post = ({ post, refetch }) => {
     const [user] = useAuthState(auth);
     library.add(fas, faFontAwesome, faReact, faNode, faJsSquare, faThumbsUp);
-    const { postId, posterName, posterEmail, posterImage, petName, petImage, petPrice, postDate, postTime, details, comments, reacts } = post;
+    const { _id, posterName, posterEmail, posterImage, petName, petImage, petPrice, postMoment, isSold, details, comments, reacts } = post;
+
     return (
         <div className='border border-blue-700 mb-5 rounded-lg py-6 shadow-lg'>
             <div className='flex justify-between px-4 md:px-6 lg:px-8 mb-4'>
@@ -24,12 +25,12 @@ const Post = ({ post }) => {
                         <div className='text-left'>
                             <p className='font-bold text-md'>{posterName}</p>
                             <p className='text-xs text-slate-400'>{posterEmail}</p>
+                            <p className='text-xs text-slate-400'>{postMoment}</p>
                         </div>
                     </div>
-                    <div className='flex justify-start text-xs'>
-                        <p className='mr-2'>{postTime}</p>
-                        <p>{postDate}</p>
-                    </div>
+                    {/* <div className='flex justify-start text-xs'>
+                        <p className=''>{postMoment}</p>
+                    </div> */}
                 </div>
                 <div className='flex justify-end'>
                     <button className='btn btn-xs'>edit</button>
@@ -45,16 +46,18 @@ const Post = ({ post }) => {
                             <h1 className='text-2xl font-bold mr-2'>{petName}</h1>
                             <p className='text-2xl font-bold text-pink-700'>{petPrice}</p>
                         </div>
-                        <div>
-                            {
-                                !user ? <Link className='btn btn-secondary btn-xs md:btn-sm' to='/login'>Oredr Now</Link> : <button
-                                    className='btn btn-secondary btn-xs md:btn-sm'>
-                                    Oredr Now
-                                </button>
-                            }
-                        </div>
+                        {
+                            (user?.email !== posterEmail) && <div>
+                                {
+                                    !user ? <Link className='btn btn-secondary btn-xs md:btn-sm' to='/login'>Oredr Now</Link> : <button
+                                        className='btn btn-secondary btn-xs md:btn-sm'>
+                                        Oredr Now
+                                    </button>
+                                }
+                            </div>
+                        }
                     </div>
-                    <p className='text-xs'>pet code: {postId}</p>
+                    <p className='text-xs'>pet code: {_id}</p>
                 </div>
                 <p className='text-slate-500'>{details}</p>
             </div>

@@ -5,7 +5,6 @@ import auth from '../../../firebase.init';
 import { useForm } from "react-hook-form";
 import Loading from '../../Shared/Loading/Loading';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import useToken from '../../../hooks/useToken';
 
 const Login = () => {
     // google authentication
@@ -19,7 +18,6 @@ const Login = () => {
         emailError,
     ] = useSignInWithEmailAndPassword(auth);
 
-    // const [token] = useToken(emailUser || googleUser);
 
     // Login form
     const { register, formState: { errors }, handleSubmit } = useForm();
@@ -132,7 +130,7 @@ const Login = () => {
                             />
                         </form>
 
-                        <p className='text-xs text-end'>new to petBazar? <Link className='link link-hover text-blue-500' to="/regester">create account</Link></p>
+                        <p className='text-xs text-end'>new to petMart? <Link className='link link-hover text-blue-500' to="/regester">create account</Link></p>
 
                         <div className="divider">or</div>
 

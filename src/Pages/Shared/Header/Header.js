@@ -6,13 +6,14 @@ import auth from '../../../firebase.init';
 import demoUserImage from '../../../assets/auth/user-logo.png';
 
 const Header = () => {
-    const [user, loading, error] = useAuthState(auth);
+    const [user, loading] = useAuthState(auth);
     const [signOut, logoutLoading, logoutError] = useSignOut(auth);
 
     //logout function
     const logout = () => {
         signOut(auth);
     }
+
     const menuItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/">Services</Link></li>
@@ -32,7 +33,7 @@ const Header = () => {
         <li><Link to="/">About</Link></li>
     </>
     return (
-        <div className="navbar bg-transparent px-o md:px-8 lg:px-10">
+        <div className="navbar px-o md:px-8 lg:px-10 sticky top-0 z-30 backdrop-blur bg-transparent">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">

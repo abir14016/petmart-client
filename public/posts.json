@@ -6,9 +6,8 @@
     "posterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo",
     "petName": "Parsian Dog",
     "petImage": "https://pawsitive.bold-themes.com/bella/wp-content/uploads/sites/4/2018/09/post_02-1280x800.jpg",
-    "petPrice": "15$",
-    "postDate": "Mar 25 2015",
-    "postTime": "21:25:21",
+    "petPrice": "15",
+    "isSold": false,
     "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!",
     "comments": [
       {
@@ -16,32 +15,28 @@
         "commenterName": "John Doe",
         "commenterEmail": "johnDoe@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "1",
         "commenterName": "Joss Butlar",
         "commenterEmail": "jossButler@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "2",
         "commenterName": "Jason Roy",
         "commenterEmail": "jasonRoy.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "3",
         "commenterName": "Jack Ball",
         "commenterEmail": "jackBall@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       }
     ],
     "reacts": [
@@ -64,9 +59,8 @@
     "posterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo",
     "petName": "Parsian Dog",
     "petImage": "https://pawsitive.bold-themes.com/bella/wp-content/uploads/sites/4/2018/09/post_02-1280x800.jpg",
-    "petPrice": "15$",
-    "postDate": "Mar 25 2015",
-    "postTime": "21:25:21",
+    "petPrice": "15",
+    "isSold": false,
     "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!",
     "comments": [
       {
@@ -74,32 +68,28 @@
         "commenterName": "John Doe",
         "commenterEmail": "johnDoe@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "1",
         "commenterName": "Joss Butlar",
         "commenterEmail": "jossButler@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "2",
         "commenterName": "Jason Roy",
         "commenterEmail": "jasonRoy.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "3",
         "commenterName": "Jack Ball",
         "commenterEmail": "jackBall@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       }
     ],
     "reacts": [
@@ -122,9 +112,8 @@
     "posterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo",
     "petName": "Parsian Dog",
     "petImage": "https://pawsitive.bold-themes.com/bella/wp-content/uploads/sites/4/2018/09/post_02-1280x800.jpg",
-    "petPrice": "15$",
-    "postDate": "Mar 25 2015",
-    "postTime": "21:25:21",
+    "petPrice": "15",
+    "isSold": false,
     "details": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque dicta esse laboriosam vitae sequi voluptatum fuga officiis alias voluptates aperiam!",
     "comments": [
       {
@@ -132,32 +121,28 @@
         "commenterName": "John Doe",
         "commenterEmail": "johnDoe@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "1",
         "commenterName": "Joss Butlar",
         "commenterEmail": "jossButler@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "2",
         "commenterName": "Jason Roy",
         "commenterEmail": "jasonRoy.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       },
       {
         "commentId": "3",
         "commenterName": "Jack Ball",
         "commenterEmail": "jackBall@gmail.com",
         "comment": "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
-        "commentDate": "Mar 25 2015",
-        "commentTime": "21:25:21"
+        "commenterImage": "https://lh3.googleusercontent.com/ogw/AAEL6sjR_Wmi6IpgJaAdrNCu9_kcWCDHNtz9QX-OrdkH=s32-c-mo"
       }
     ],
     "reacts": [

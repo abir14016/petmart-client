@@ -87,6 +87,9 @@ const Regester = () => {
             .then(data => {
                 console.log(data);
             })
+            .then(setTimeout(() => {
+                window.location.reload()
+            }, 1000))
 
         // navigate('/');
     }
