@@ -7,6 +7,7 @@ import backgroundImage from "./assets/background/scattered-forcefields.svg";
 import Posts from './Pages/Posts/Posts';
 import Login from './Pages/Authentication/Login/Login';
 import Regester from './Pages/Authentication/Regester/Regester';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const background = {
@@ -27,6 +28,7 @@ function App() {
         <Route path='/posts' element={<Posts />} />
       </Routes>
       {/* <Footer /> */}
+      <ToastContainer />
     </div>
 
   );

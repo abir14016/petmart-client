@@ -7,6 +7,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import date from 'date-and-time';
 import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const Posts = () => {
     const [user] = useAuthState(auth);
@@ -67,6 +68,7 @@ const Posts = () => {
                             if (data.insertedId) {
                                 reset();
                                 refetch();
+                                toast.success("Post Added Successfully");
                             }
                         })
                 }
@@ -225,6 +227,7 @@ const Posts = () => {
                             {/* photo field */}
 
                             <input
+                                disabled={!user}
                                 className='btn btn-sm btn-primary w-full max-w-xs'
                                 type="submit"
                                 value="POST"
