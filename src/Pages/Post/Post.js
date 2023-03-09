@@ -23,7 +23,6 @@ const Post = ({ post, refetch }) => {
     const { _id, posterName, posterEmail, posterImage, petName, petImage, petPrice, postMoment, isSold, details, comments, reacts, address } = post;
 
     const onSubmit = data => {
-        console.log(data);
         const updatedPost = {
             posterEmail: posterEmail,
             posterName: posterName,
@@ -59,6 +58,41 @@ const Post = ({ post, refetch }) => {
                     reset();
                     refetch();
                     toast.success("Comment Added Successfully");
+                }
+            })
+    }
+
+    const handleReact = () => {
+        const updatedPost = {
+            posterEmail: posterEmail,
+            posterName: posterName,
+            posterImage: posterImage,
+            postMoment: postMoment,
+            isSold: isSold,
+            comments: comments,
+            reacts: [...reacts, {
+                reactId: reacts.length + 1,
+                reacterEmail: user.email,
+                reacterName: user.displayName
+            }],
+            address: address,
+            details: details,
+            petImage: petImage,
+            petName: petName,
+            petPrice: petPrice
+        }
+
+        fetch(`http://localhost:5000/post/${_id}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updatedPost)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    refetch();
                 }
             })
     }
@@ -145,7 +179,9 @@ const Post = ({ post, refetch }) => {
             </div>
             <div className="divider"></div>
             <div className='flex justify-evenly'>
-                <button className='flex justify-center items-center'>
+                <button
+                    onClick={handleReact}
+                    className='flex justify-center items-center'>
                     <FontAwesomeIcon className='mr-2' icon="fa-solid fa-thumbs-up" />
                     <p>Like</p>
                 </button>
