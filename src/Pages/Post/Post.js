@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas, faThumbsUp, } from '@fortawesome/free-solid-svg-icons'
+import { faLocation, faLocationDot, fas, faThumbsUp, } from '@fortawesome/free-solid-svg-icons'
 import { faFontAwesome, faReact, faNode, faJsSquare } from '@fortawesome/free-brands-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useAuthState } from 'react-firebase-hooks/auth';
@@ -9,6 +9,7 @@ import { Link } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import Comment from '../Comment/Comment';
 import { toast } from 'react-toastify';
+import UseAdmin from '../../hooks/UseAdmin';
 
 const Post = ({ post, refetch }) => {
     const [seeComments, setSeeComments] = useState(false);
@@ -18,8 +19,9 @@ const Post = ({ post, refetch }) => {
     }
 
     const [user] = useAuthState(auth);
+    const [admin] = UseAdmin(user);
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
-    library.add(fas, faFontAwesome, faReact, faNode, faJsSquare, faThumbsUp);
+    library.add(fas, faFontAwesome, faReact, faNode, faJsSquare, faThumbsUp, faLocationDot);
     const { _id, posterName, posterEmail, posterImage, petName, petImage, petPrice, postMoment, isSold, details, comments, reacts, address } = post;
 
     const onSubmit = data => {
@@ -135,9 +137,10 @@ const Post = ({ post, refetch }) => {
                         </div>
                         <div>
                             {
-                                (user?.email !== posterEmail) ? <div>
+                                ((user?.email !== posterEmail)) ? <div>
                                     {
                                         !user ? <Link className='btn btn-secondary btn-xs md:btn-sm' to='/login'>Oredr Now</Link> : <button
+                                            disabled={admin}
                                             className='btn btn-secondary btn-xs md:btn-sm'>
                                             Oredr Now
                                         </button>
@@ -152,11 +155,13 @@ const Post = ({ post, refetch }) => {
                                 </div>
                             }
                             {
-                                address && <h6 className='text-xs'>Location: {address}</h6>
+                                address && <h6 className='text-xs mt-1'>
+                                    <FontAwesomeIcon className='mr-2' icon="fa-solid fa-location-dot" />
+                                    <span>{address}</span></h6>
                             }
                         </div>
                     </div>
-                    <p className='text-xs'>pet code: {_id}</p>
+                    <p className='text-xs'>pet code: <span className='text-yellow-500'>{_id}</span> </p>
                 </div>
                 <p className='text-slate-500'>{details}</p>
             </div>
@@ -179,12 +184,21 @@ const Post = ({ post, refetch }) => {
             </div>
             <div className="divider"></div>
             <div className='flex justify-evenly'>
-                <button
-                    onClick={handleReact}
-                    className='flex justify-center items-center'>
-                    <FontAwesomeIcon className='mr-2' icon="fa-solid fa-thumbs-up" />
-                    <p>Like</p>
-                </button>
+                {
+                    reacts.find(react => react.reacterEmail === user.email) ? <button
+                        disabled={reacts.find(react => react.reacterEmail === user.email)}
+                        onClick={handleReact}
+                        className='flex justify-center items-center text-blue-600'>
+                        <FontAwesomeIcon className='mr-2' icon="fa-solid fa-thumbs-up" />
+                        <p>Liked</p>
+                    </button> : <button
+                        disabled={reacts.find(react => react.reacterEmail === user.email)}
+                        onClick={handleReact}
+                        className='flex justify-center items-center'>
+                        <FontAwesomeIcon className='mr-2' icon="fa-solid fa-thumbs-up" />
+                        <p>Like</p>
+                    </button>
+                }
 
                 <div className="dropdown dropdown-start">
                     <label tabIndex={0} className="flex justify-center items-center cursor-pointer">

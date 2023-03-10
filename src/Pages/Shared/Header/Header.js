@@ -101,8 +101,8 @@ const Header = () => {
                             </div>
                             <div className='divider'></div>
                             <li><Link to="#">Update Profile</Link></li>
-                            <li><Link to="#">Dashboard</Link></li>
-                            <li><button>Logout</button></li>
+                            <li><Link to="/dashboard">Dashboard</Link></li>
+                            <li><button onClick={logout}>Logout</button></li>
                         </ul>
                     </div>
                 }

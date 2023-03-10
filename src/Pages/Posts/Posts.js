@@ -8,9 +8,11 @@ import auth from '../../firebase.init';
 import date from 'date-and-time';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import UseAdmin from '../../hooks/UseAdmin';
 
 const Posts = () => {
     const [user] = useAuthState(auth);
+    const [admin] = UseAdmin(user);
 
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
@@ -227,7 +229,7 @@ const Posts = () => {
                             {/* photo field */}
 
                             <input
-                                disabled={!user}
+                                disabled={(!user || admin)}
                                 className='btn btn-sm btn-primary w-full max-w-xs'
                                 type="submit"
                                 value="POST"
